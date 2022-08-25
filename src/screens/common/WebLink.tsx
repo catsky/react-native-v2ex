@@ -11,7 +11,8 @@ import { translate } from '@src/i18n'
 
 const WebLink = ({ route, navigation }: ScreenProps) => {
   const { theme } = useTheme()
-  const webViewRef = useRef(new WebView<{ current?: any }>({}))
+  // const webViewRef = useRef(new WebView<{ current?: any }>({}))
+  const webViewRef = useRef()
   const [loading, setLoading] = React.useState(true)
   const url = useMemo(
     () => (!route.params.url.startsWith('http') ? `http://${route.params.url}` : route.params.url),
